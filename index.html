@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#101624" />
+  <title>Little City, Big Steps</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="game-shell">
+    <canvas id="game" aria-label="3D miniature city game"></canvas>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Little City, Big Steps home">
+        <span class="brand-mark">L<span>+</span></span>
+        <span class="brand-name">LITTLE CITY <b>BIG STEPS</b></span>
+      </a>
+      <div class="top-center"><span class="live-dot"></span> <span id="status-label">CITY PLAYGROUND</span></div>
+      <button id="sound-button" class="icon-button" aria-label="Toggle sound" title="Toggle sound"><span id="sound-icon">♪</span></button>
+    </header>
+
+    <section class="hud" aria-label="Game statistics">
+      <div class="stat-card score-card">
+        <div class="stat-label"><span class="mini-icon">✦</span> IMPACT SCORE</div>
+        <div class="stat-value"><span id="score">0000</span><span class="stat-unit">PTS</span></div>
+        <div class="progress-track"><i id="score-progress"></i></div>
+      </div>
+      <div class="stat-card timer-card">
+        <div class="stat-label">TIME LEFT</div>
+        <div id="timer" class="stat-value">01:30</div>
+      </div>
+    </section>
+
+    <div class="objective-pill"><span class="target-icon">◎</span><span id="objective">Explore the city and leave your mark</span></div>
+    <div id="combo" class="combo-toast" aria-live="polite"></div>
+    <div id="toast" class="toast" aria-live="polite"></div>
+
+    <aside class="controls-card">
+      <div class="controls-title">HOW TO PLAY <span>↗</span></div>
+      <div class="control-row"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd><span>Walk around</span></div>
+      <div class="control-row"><kbd class="wide">SPACE</kbd><span>Ground-shaking stomp</span></div>
+      <div class="control-hint">Find the tiny city below. Get close, then stomp!</div>
+    </aside>
+
+    <div class="crosshair"><span></span></div>
+    <div class="mobile-controls" aria-label="Touch controls">
+      <div class="dpad">
+        <button data-dir="up" aria-label="Move forward">▲</button>
+        <button data-dir="left" aria-label="Move left">◀</button>
+        <button data-dir="down" aria-label="Move backward">▼</button>
+        <button data-dir="right" aria-label="Move right">▶</button>
+      </div>
+      <button id="stomp-button" class="stomp-button"><span>⬇</span><b>STOMP</b></button>
+    </div>
+
+    <section id="welcome" class="overlay">
+      <div class="welcome-panel">
+        <div class="eyebrow"><span></span> A POCKET-SIZED PLAYGROUND</div>
+        <h1>Little city.<br /><em>Big steps.</em></h1>
+        <p>Take a stroll through a tiny town as its newest giant neighbor. Wander the streets, discover the details, and make the ground shake.</p>
+        <div class="welcome-details"><div><span class="detail-icon">⌁</span><span><b>90 seconds</b><small>of city-sized fun</small></span></div><div><span class="detail-icon">✧</span><span><b>Every stomp counts</b><small>build your impact score</small></span></div></div>
+        <button id="start-button" class="primary-button">STEP INTO THE CITY <span>→</span></button>
+        <div class="start-note">WASD to explore <i>·</i> SPACE to stomp</div>
+      </div>
+      <div class="welcome-badge"><span>✦</span> BUILT FOR BIG ADVENTURES</div>
+    </section>
+
+    <section id="end-screen" class="overlay hidden">
+      <div class="welcome-panel end-panel">
+        <div class="eyebrow"><span></span> CITY STROLL COMPLETE</div>
+        <h2>What a <em>footprint.</em></h2>
+        <p id="end-copy">The little city won't forget your visit.</p>
+        <div class="final-score"><span>YOUR IMPACT</span><b id="final-score">0000 <small>PTS</small></b></div>
+        <button id="again-button" class="primary-button">TAKE ANOTHER STROLL <span>↻</span></button>
+      </div>
+    </section>
+    <div class="bottom-caption"><span class="caption-star">✦</span> A WHOLE WORLD AT YOUR FEET <span class="caption-line"></span></div>
+  </main>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
