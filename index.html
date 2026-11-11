@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Giantess City Escape</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="data:," />
+  </head>
+  <body>
+    <div class="game-shell">
+      <header class="hud">
+        <div class="brand-block">
+          <div class="eyebrow">Tiny Pedestrian</div>
+          <h1>Giantess City Escape</h1>
+        </div>
+        <div class="stats">
+          <div class="stat-box">
+            <span>Health</span>
+            <strong id="healthLabel">3</strong>
+          </div>
+          <div class="stat-box">
+            <span>Timer</span>
+            <strong id="timerLabel">90</strong>
+          </div>
+          <div class="stat-box">
+            <span>Beacons</span>
+            <strong id="beaconLabel">0 / 3</strong>
+          </div>
+        </div>
+      </header>
+
+      <canvas id="gameCanvas" width="960" height="600" aria-label="City survival game"></canvas>
+
+      <div class="message-bar" id="messageBox">
+        Collect three rooftop beacons and reach the station exit while the barefoot giantess patrols the streets.
+      </div>
+
+      <div id="touchControls" class="touch-controls" aria-label="Touch controls">
+        <button class="move-btn" data-key="up">▲</button>
+        <div class="middle-row">
+          <button class="move-btn" data-key="left">◀</button>
+          <button class="move-btn" data-key="down">▼</button>
+          <button class="move-btn" data-key="right">▶</button>
+        </div>
+      </div>
+
+      <div id="overlay" class="overlay visible">
+        <div class="panel">
+          <p class="small-tag">Street Survival</p>
+          <h2 id="overlayTitle">Start the Run</h2>
+          <p id="overlayText">
+            Explore the city as a tiny pedestrian. The giantess walks the streets in slow loops, pauses for a close-up, and stomps anything in reach.
+          </p>
+          <button id="startButton">Begin</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
